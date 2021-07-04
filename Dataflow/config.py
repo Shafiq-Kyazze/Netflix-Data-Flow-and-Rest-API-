@@ -1,3 +1,3 @@
 """Config file"""
 
-DATABASE_URI = "postgres://postgres:password@rogue.db.elephantsql.com/ddybjwna"
+DATABASE_URI = "postgres://postgres:password@******.db.elephantsql.com/******"
