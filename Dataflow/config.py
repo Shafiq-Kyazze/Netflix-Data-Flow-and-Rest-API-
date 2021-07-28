@@ -1,3 +1,3 @@
 """Config file"""
 
-DATABASE_URI = "postgres://postgres:password@******.db.elephantsql.com/******"
+DATABASE_URI = "postgresql://postgres:228596@localhost/netflix_db"
