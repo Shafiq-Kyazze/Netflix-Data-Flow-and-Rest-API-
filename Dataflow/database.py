@@ -5,7 +5,7 @@ from sqlalchemy import create_engine
 
 import pandas as pd
 
-#Creating engine
+#Creating engine and connecting it to database
 engine = create_engine(DATABASE_URI, echo=True)
 
 #Binding session to engine/database
@@ -21,7 +21,7 @@ file_path = r"/home/shafiq/Dropbox/Data Science Projects/Netflix project/Netflix
 df = pd.read_csv(file_path, encoding='ISO-8859-1')
 
 from datetime import datetime
-"""Function that converts to python datetime"""
+"""Function that converts different datetime formarts to the default python datetime format"""
 def date_convertor(time):
     if "," in str(time): #if comma after day convert time this way
         new_date = datetime.strptime(time, "%B %d, %Y").date()
@@ -29,6 +29,7 @@ def date_convertor(time):
         new_date = datetime.strptime(time, "%B %d. %Y").date()
     return new_date
 
+#Applying the function to a dataframe
 df['Premiere'] = df['Premiere'].apply(lambda x: date_convertor(x))
 
 rows = list(map(tuple,df.to_numpy())) # list of all the rows in the dataset
