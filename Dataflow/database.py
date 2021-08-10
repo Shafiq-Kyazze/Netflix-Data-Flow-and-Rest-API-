@@ -17,7 +17,7 @@ Base.metadata.create_all(bind=engine)
 s.commit()
 
 
-file_path = r"/home/shafiq/Dropbox/Data Science Projects/Netflix project/Netflix-Data-Flow-and-Rest-API-/Dataset/NetflixOriginals.csv"
+file_path = r"/media/shafiq/New Volume/Dropbox/Data Science Projects/Netflix-API-Project/Netflix project/Netflix-Data-Flow-and-Rest-API-/Dataset/NetflixOriginals.csv"
 df = pd.read_csv(file_path, encoding='ISO-8859-1')
 
 from datetime import datetime
