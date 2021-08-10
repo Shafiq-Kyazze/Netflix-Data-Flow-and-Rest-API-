@@ -146,7 +146,8 @@ class get_movie(Resource):
     @api.doc(params={'Fetch single movie Security Check': {'in': 'header', 'description': 'Access authorization token'}})
     @jwt_required()
     def get(self,title):
-        movie = NETFLIX.query.filter(NETFLIX.Title == title).first()
+        Title = request.json['Title']
+        movie = NETFLIX.check_movie_title(Title)
         return movie_Scehma.jsonify(movie)
 
 
@@ -163,8 +164,15 @@ class add_movie(Resource):
         Run_time = request.json['Run_time']
         IMDB_Score = request.json['IMDB_Score']
         Language = request.json['Language']
+
+        #If any of the required inputs aren't filled in
         if Title or Genre or Premiere or Run_time or IMDB_Score or Language is None:
             return {"message" : "Please fill in all the inputs i.e Title, Genre,Premiere, Run_time, IMDB_Score, Language"}
+
+        #Check to see if movie being added is already in the database
+        if NETFLIX.check_movie_title(Title) is not None:
+            return {'message': "The movie is already in the database"}
+
         new_movie = netSchema(Title, Genre, Premiere, Run_time, IMDB_Score, Language)
         db.session.add(new_movie)
         db.session.commit()
@@ -180,10 +188,13 @@ class delete_movie(Resource):
     def delete(self,title):
         title = request.json['Title']
 
+        #If movie in database
         if NETFLIX.check_movie_title(title) is not None:
             movie_to_del = NETFLIX.query.get(title)
             db.session.delete(movie_to_del)
             db.commit()
             return movie_Scehma.jsonify(movie_to_del)
+
+        #if the movie isn't in the database
         if NETFLIX.check_movie_title(title) is None:
             return {'message': "User not in database"}
