@@ -25,7 +25,7 @@ api = Api(
                   "PostgreSQL database. To use the API endpoints,"
                   "Please create your profile, then use your credentials to obtain an access token."
                   "Use the access token provided to use the URL endpoints."
-                  "Please note: ACCESS TOKENS ARE VALID FOR 5 MINUTES ONLY",
+                  "Please note: ACCESS TOKENS ARE VALID FOR 30 MINUTES ONLY",
     contact = "Shafiq Kyazze"
 )
 
