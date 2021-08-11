@@ -7,7 +7,6 @@
 
 #### **How the API runs**
 
-- [ ] 
 - [ ] The API can be run using your local IDE such as pycharm. 
 - [ ] The API contains a run.py file in the api folder which has to be executed to deploy the API on your local server(computer)
 - [ ] After running the run.oy file, create your profile using the /netflix/user/signup URL endpoint
