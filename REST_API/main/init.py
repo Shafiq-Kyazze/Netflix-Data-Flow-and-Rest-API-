@@ -12,6 +12,7 @@ def _init_app():
     app.config["SQLALCHEMY_DATABASE_URI"] = DATABASE_URI  #Connecting the postgre database to be used by flask
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False  #Turn off event generation
     app.config['JWT_SECRET_KEY'] = jwt_key
+    app.config['PROPAGATE_EXCEPTIONS'] = True #Stop flaskrestx from intefering with jwt error handling
     db.init_app(app)   #initialising sqlalchemy on the flask app
     jwt.init_app(app)  #initialising JWT on the flask app
 
