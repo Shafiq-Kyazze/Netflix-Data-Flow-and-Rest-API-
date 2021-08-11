@@ -4,7 +4,6 @@ from flask import request, jsonify
 from flask import current_app as app
 from flask_jwt_extended import create_access_token,jwt_required
 from datetime import timedelta
-from jwt.exceptions import ExpiredSignatureError , DecodeError
 
 
 import werkzeug
