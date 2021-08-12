@@ -9,8 +9,8 @@ WORKDIR /REST_API
 #copy the all the contents of our current working directory into the docker image working directory i.e REST_API
 COPY . /REST_API
 
-#Install the dependencies of the flask app
+#Install the dependencies of the res api
 RUN pip install -r requirements.txt
 
-#Command that will run the run.py file
+#Command that will run the run.py module to deploy the rest api
 CMD ["python", "run.py"]
