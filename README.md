@@ -4,7 +4,8 @@
 **Brief Summary**
 
 
-- [ ] A Rest API which fetches, uploads and deletes movie details from a Postgresql database
+- [ ] A Data Pipeline was constructed and it uploaded data into Elepahnt SQL, a PostgreSQL cloud service. This readme file will concentrate on the Restful API part of the project. 
+- [ ]  A Rest API which fetches, uploads and deletes movie details from a Postgresql database
 - [ ] The Restful API can be found in the REST_API folder.
 - [ ] The Datase folder holds the csv file contian the data used
 - [ ] THe Dataflow folder contains the Data pipeline
@@ -38,7 +39,8 @@ The API uses the following methods and url endpoints to fetch or delete data
 The Swagger UI can be accessed through following the steps as shown on the Swagger website [here](https://swagger.io/docs/swagger-inspector/how-to-use-swagger-inspector/)
 
 ## **Docker file**
-- [ ] The docker image of the RESTful API can be pulled from this link  [docker image link](docker%20pull%20shafiqkyazze/netflix-api:latest)
+- [ ] The docker image of the RESTful API can be pulled from docker hub by using the following command below:
+>     docker pull shafiqkyazze/netflix-api:latest
 
 ## **Note**
 - [ ] Access tokens are valid for 30 minutes only
