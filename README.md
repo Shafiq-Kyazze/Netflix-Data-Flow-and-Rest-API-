@@ -4,7 +4,8 @@
 **Brief Summary**
 
 
-- [ ] A Rest API which fetches, uploads and deletes movie details from a Postgresql database
+- [ ]A Data Pipeline was constructed and it uploaded data into Elepahnt SQL, a PostgreSQL cloud service. This readme file will concentrate on the Restful API part of the project. 
+- [ ]  A Rest API which fetches, uploads and deletes movie details from a Postgresql database
 - [ ] The Restful API can be found in the REST_API folder.
 - [ ] The Datase folder holds the csv file contian the data used
 - [ ] THe Dataflow folder contains the Data pipeline
